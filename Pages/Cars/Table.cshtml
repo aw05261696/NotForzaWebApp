@@ -1,72 +1,39 @@
 @page
-@model Downloads.Pages_Cars.IndexModel
+@model Downloads.Pages_Cars.IndexModel 
 
 @{
     ViewData["Title"] = "Cars";
 }
 
-<h1 style="padding-top:20px;">Cars</h1>
+<h1 style="padding-top:20px;">Cars Shop</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create">Add New Car</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarModel)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarGrade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarCost)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarDescription)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Car[0].CarPicURL)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Car) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarModel)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarGrade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarCost)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CarPicURL)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.CarID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.CarID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.CarID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="cars-container">
+    @foreach (var car in Model.Car)
+    {
+        <div class="car-card">
+            <div class="FatImageCentre">
+                <img src="@car.CarPicURL" alt="Car Image" class="@car.CarModel Image"/>
+            </div>
+            <div class="car-info">
+                <h2>@Html.DisplayFor(modelItem => car.CarName)</h2>
+                <h2>@Html.DisplayFor(modelItem => car.CarModel)</h2>
+                <p>Year: @Html.DisplayFor(modelItem => car.CarYear)</p>
+                <p>Grade: @Html.DisplayFor(modelItem => car.CarGrade)</p>
+                <h2>£ @Html.DisplayFor(modelItem => car.CarCost)</h2> <br>
+                <div style="text-align: center;"> 
+                    <button class="buy-btn" onclick="location.href='/Marketplace'">Buy Now</button>
+                </div>
+                <div class="CruddyButtys">
+                    <a asp-page="./Edit" asp-route-id="@car.CarID" class="crud_but">Edit</a>
+                    <a asp-page="./Details" asp-route-id="@car.CarID" class="crud_but">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@car.CarID" class="crud_but">Delete</a>
+                </div>
+
+            </div>
+        </div>
+    }
+</div>
