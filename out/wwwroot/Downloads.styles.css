@@ -1,0 +1,51 @@
+/* _content/Downloads/Pages/Shared/_Layout.cshtml.rz.scp.css */
+a.navbar-brand[b-1kdvzyuaqf] {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+a[b-1kdvzyuaqf] {
+  color: #0077cc;
+}
+
+.nav-link[b-1kdvzyuaqf] {
+  margin-left: 100px;
+}
+
+.btn-primary[b-1kdvzyuaqf] {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.border-top[b-1kdvzyuaqf] {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom[b-1kdvzyuaqf] {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow[b-1kdvzyuaqf] {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy[b-1kdvzyuaqf] {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.footer[b-1kdvzyuaqf] {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+}
+
+.container[b-1kdvzyuaqf] {
+  color: black;
+}
+
+.footer_text[b-1kdvzyuaqf] {
+  color: white;
+}
